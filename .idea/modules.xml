@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidUtils.iml" filepath="$PROJECT_DIR$/AndroidUtils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CaffeineProject.iml" filepath="$PROJECT_DIR$/CaffeineProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/caffeine/caffeine-caffeine.iml" filepath="$PROJECT_DIR$/caffeine/caffeine-caffeine.iml" />
       <module fileurl="file://$PROJECT_DIR$/tests/tests.iml" filepath="$PROJECT_DIR$/tests/tests.iml" />
-      <module fileurl="file://$PROJECT_DIR$/utils/utils.iml" filepath="$PROJECT_DIR$/utils/utils.iml" />
     </modules>
   </component>
 </project>

@@ -8,8 +8,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/caffeine" />
             <option value="$PROJECT_DIR$/tests" />
-            <option value="$PROJECT_DIR$/utils" />
           </set>
         </option>
       </GradleProjectSettings>

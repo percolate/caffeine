@@ -1,4 +1,5 @@
-# Caffeine - Speed up your Android development!
+# Caffeine 
+## _Speed up your Android development!_
 
 **A collection of utility classes that help make Android development faster (and safer!)**
 
@@ -11,6 +12,7 @@ No more unsafe type casting scattered throughout your code:
 `ImageView y = ViewUtils.findViewById(this, R.id.my_image)`
 
 `LinearLayout z = ViewUtils.findViewById(this, R.id.my_layout)`
+
 
 
 
@@ -28,6 +30,8 @@ Some handy 1-liners:
 ## Adding to your application
 
 1.  Using maven
+
+   TODO
 
 2.  As a [.jar](https://github.com/percolate/caffeine/tree/master/distribution) file
 

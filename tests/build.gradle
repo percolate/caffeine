@@ -5,7 +5,7 @@ android {
     buildToolsVersion "20.0.0"
 
     defaultConfig {
-        applicationId "com.percolate.android.utils.testapp"
+        applicationId "com.percolate.caffeine.testapp"
         minSdkVersion 14
         targetSdkVersion 20
         versionCode 687
@@ -15,5 +15,5 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(':utils')
+    compile project(':caffeine')
 }
