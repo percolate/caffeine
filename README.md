@@ -1,7 +1,7 @@
 # Caffeine 
 #### _Speed up your Android development!_
 
-**A collection of utility classes that help make Android development faster (and safer!)**
+A collection of utility classes that help make Android development faster (and safer!)
 
 ## Examples
 
@@ -10,8 +10,8 @@ No more unsafe type casting scattered throughout your code:
 ```java
 TextView x = ViewUtils.findViewById(this, R.id.my_text)
 ImageView y = ViewUtils.findViewById(this, R.id.my_image)
-LinearLayout z = ViewUtils.findViewById(this, R.id.my_layout)```
-
+LinearLayout z = ViewUtils.findViewById(this, R.id.my_layout)
+```
 
 Some handy 1-liners:
 
@@ -26,17 +26,15 @@ ToastUtils.quickToast(this, "Some toast message");
 
 ## Adding to your application
 
-1.  Using gradle
+ 1.  As a [.jar](https://github.com/percolate/caffeine/tree/master/distribution) file
+
+ 2.  Using gradle
 
 ```groovy
-compile 'com.squareup.picasso:picasso:2.3.4'
+compile '...coming soon...'
 ```
 
-2.  As a [.jar](https://github.com/percolate/caffeine/tree/master/distribution) file
-
-3.  Using maven
-
-   TODO
+ 3.  Using maven (TODO)
 
 
 ## License
