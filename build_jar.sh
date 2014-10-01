@@ -1,10 +1,5 @@
 #!/bin/sh
-./gradlew clean jar
+./gradlew clean makeJar
 if [ $? -eq 0 ]; then
-  cp caffeine/build/libs/caffeine.jar ./distribution/caffeine-`cat VERSION.txt`.jar
-  
-  if [ $? -eq 0 ]; then
-    echo "\nCreate file caffeine-`cat VERSION.txt`.jar\n"
-  fi
-  
+  echo "\nJar file created in distribution directory\n"
 fi

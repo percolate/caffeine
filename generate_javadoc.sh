@@ -8,3 +8,4 @@ javadoc -protected \
 -use \
 com.percolate.caffeine
 
+echo "Created.  To publish: git checkout gh-pages; git merge master; git push"
