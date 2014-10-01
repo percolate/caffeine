@@ -26,15 +26,15 @@ ToastUtils.quickToast(this, "Some toast message");
 
 ## Adding to your application
 
- 1.  As a [.jar](https://github.com/percolate/caffeine/tree/master/distribution) file
+ - As a [.jar](https://github.com/percolate/caffeine/tree/master/distribution) file
 
- 2.  Using gradle
+ - Using gradle
 
 ```groovy
 compile '...coming soon...'
 ```
 
- 3.  Using maven (TODO)
+ - Using maven (TODO)
 
 
 ## License
