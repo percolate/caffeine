@@ -8,4 +8,4 @@ javadoc -protected \
 -use \
 com.percolate.caffeine
 
-echo "\nCreated.  To publish: git add javadoc; git commit -m \"new javadocs\"; git push; git checkout gh-pages; git merge master; git push\n"
+echo "\nCreated.  To publish: git add javadoc; git commit -m \"new javadocs\"; git push; git checkout gh-pages; git merge master; git push; git checkout -\n"
