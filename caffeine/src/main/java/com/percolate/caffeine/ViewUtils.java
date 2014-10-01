@@ -15,9 +15,16 @@ import android.widget.TextView;
  *
  * <h3>Common uses:</h3>
  * <code>TextView textView = ViewUtils.{@link #findViewById findViewById}(this, R.id.my_text_view);</code> //<b>no more casting!</b><br />
+ * <code>TextView textView = ViewUtils.{@link #findViewById findViewById}(parentView, R.id.my_text_view);</code> //<b>no more casting!</b><br />
  * <code>String text = ViewUtils.{@link #getText getText}(this, R.id.my_text_view);</code><br />
+ * <code>ViewUtils.{@link #setText setText}(this, R.id.my_text_vew, "new text");</code><br />
+ * <code>ViewUtils.{@link #setText setText}(textView, "new text");</code><br />
+ * <code>ViewUtils.{@link #appendText appendText}(textView, "appended");</code><br />
  * <code>ViewUtils.{@link #hideView hideView}(this, R.id.my_text_view);</code><br />
  * <code>ViewUtils.{@link #showView showView}(this, R.id.my_text_view);</code><br />
+ * <code>Bitmap bitmap = ViewUtils.{@link #viewToImage viewToImage}(this, R.id.my_layout);</code><br />
+ * <code>ViewUtils.{@link #closeKeyboard showKeyboard}(this, R.id.my_text_view);</code><br />
+ * <code>ViewUtils.{@link #closeKeyboard closeKeyboard}(this, R.id.my_text_view);</code><br />
  * <br />
  */
 public class ViewUtils {

@@ -8,7 +8,7 @@ import android.util.DisplayMetrics;
  * <h2>A class for toys that do not have a home.</h2>
  *
  * <h3>Common uses:</h3>
- * <code>MiscUtils.dpToPx(this, 100);</code> //Returns pixel equivalent of 100dp's (Density-independent pixels)<br />
+ * <code>MiscUtils.{@link #dpToPx dpToPx}(this, 100);</code> //Returns pixel equivalent of 100dp's (Density-independent pixels)<br />
  * <code>MiscUtils.{@link #getVersionName getVersionName}(this);</code> //"Your App name from manifest"<br />
  * <code>MiscUtils.{@link #getVersionName getVersionName}(this);</code> //"5.4.3" - your app version name from AndroidManifest"<br />
  * <code>MiscUtils.{@link #getVersionCode getVersionCode}(this);</code> //307 - your app version number from AndroidManifest"<br />
