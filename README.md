@@ -21,7 +21,7 @@ DialogUtils.quickDialog(this, "Some awesome message");
 ToastUtils.quickToast(this, "Some toast message");
 ```
 
-[And much more!](http://percolate.github.io/caffeine/)
+[And much more!](http://percolate.github.io/caffeine/javadoc/)
 
 
 ## Adding to your application
