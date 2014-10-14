@@ -125,8 +125,7 @@ public class ViewUtils {
 	 * @param toAppend String text
 	 */
 	public static void appendText(TextView view, String toAppend){
-		String currentText = getText(view);
-		view.setText(currentText + toAppend);	
+        view.append(toAppend);
 	}
 	
 	/**
