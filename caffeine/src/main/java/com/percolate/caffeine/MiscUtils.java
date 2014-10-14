@@ -2,6 +2,7 @@ package com.percolate.caffeine;
 
 import android.content.Context;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.telephony.PhoneNumberUtils;
 import android.util.DisplayMetrics;
 
 /**
@@ -89,5 +90,17 @@ public class MiscUtils {
             return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
         }
     }
-	
+    /**
+     * Uses androids android.telephony.PhoneNumberUtils to check if an phone number is valid.
+     *
+     * @param number Phone number to check
+     * @return true if the <code>number</code> is a valid phone number.
+     */
+    public final static boolean isValidPhoneNumber(String number) {
+        if (number == null) {
+            return false;
+        } else {
+            return PhoneNumberUtils.isGlobalPhoneNumber(number);
+        }
+    }
 }
