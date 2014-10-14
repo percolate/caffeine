@@ -130,7 +130,7 @@ public class ViewUtils {
 	}
 	
 	/**
-	 * Go way keyboard, nobody likes you.
+	 * Go away keyboard, nobody likes you.
      *
 	 * @param context The current Context or Activity that this method is called from
 	 * @param field field that holds the keyboard focus
