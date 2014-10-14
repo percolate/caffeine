@@ -1,10 +1,38 @@
 package com.percolate.caffeine.testapp;
 
+import android.util.Log;
+
 import com.percolate.caffeine.CountUtil;
 
 import junit.framework.TestCase;
 
+import java.util.Locale;
+
 public class CountUtilTest extends TestCase {
+    private Locale originalLocale = null;
+
+    public void setUp() {
+        /* This test setup avoids test failures caused by non-English locales that use different
+         * punctuation. For instance, in German, numbers would look like 123.456.789,10 rather than
+         * 123,456,789.10. As this test case implies the English locale for assertions, every test
+         * will be conducted using the English locale (Locale.ENGLISH) instead and restore the
+         * original locale during tearDown.
+         */
+
+        Locale currentLocale = Locale.getDefault();
+        if (currentLocale != Locale.ENGLISH) {
+            Log.i("CountUtilTest", "Setting locale to English");
+            Locale.setDefault(Locale.ENGLISH);
+            originalLocale = currentLocale;
+        }
+    }
+
+    public void tearDown() {
+        if (originalLocale != null) {
+            Log.i("CountUtilTest", "Restoring locale to " + originalLocale.getDisplayName());
+            Locale.setDefault(originalLocale);
+        }
+    }
 
     public void testGetFormattedCountInt(){
         assertEquals("0", CountUtil.getFormattedCount(0));
@@ -29,7 +57,7 @@ public class CountUtilTest extends TestCase {
         assertEquals("120m", CountUtil.getFormattedCount(120000009));
         assertEquals("1.2b", CountUtil.getFormattedCount(1200000009));
     }
-    
+
     public void testGetFormattedCountString(){
         assertEquals("0", CountUtil.getFormattedCount("0"));
         assertEquals("10", CountUtil.getFormattedCount("10"));
@@ -52,8 +80,8 @@ public class CountUtilTest extends TestCase {
         assertEquals("12m", CountUtil.getFormattedCount("12000009"));
         assertEquals("120m", CountUtil.getFormattedCount("120000009"));
         assertEquals("1.2b", CountUtil.getFormattedCount("1200000009"));
-    }    
-    
+    }
+
     public void testGetFormattedCountLong(){
         assertEquals("0", CountUtil.getFormattedCount(0L));
         assertEquals("10", CountUtil.getFormattedCount(10L));
