@@ -42,4 +42,27 @@ public class MiscUtilsTest extends ActivityInstrumentationTestCase2<MainActivity
         assertFalse(MiscUtils.isValidEmail("t@t"));
     }
 
+    public void testIsValidPhoneNumberTrue(){
+        assertTrue(MiscUtils.isValidPhoneNumber("636-48018"));
+        assertTrue(MiscUtils.isValidPhoneNumber("+1-541-754-3010"));
+    }
+
+    public void testIsValidPhoneNumberFalse(){
+        assertFalse(MiscUtils.isValidEmail(null));
+        assertFalse(MiscUtils.isValidEmail(""));
+        assertFalse(MiscUtils.isValidEmail("test"));
+        assertFalse(MiscUtils.isValidEmail("636-48018f"));
+    }
+
+    public void testIsValidURLTrue(){
+        assertTrue(MiscUtils.isValidPhoneNumber("http://google.com"));
+        assertTrue(MiscUtils.isValidPhoneNumber("https://www.google.com"));
+    }
+
+    public void testIsValidURLFalse(){
+        assertFalse(MiscUtils.isValidEmail(null));
+        assertFalse(MiscUtils.isValidEmail(""));
+        assertFalse(MiscUtils.isValidEmail("htttp://google.com"));
+        assertFalse(MiscUtils.isValidEmail("google"));
+    }
 }
