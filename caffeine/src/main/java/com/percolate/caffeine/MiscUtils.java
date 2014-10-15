@@ -108,7 +108,7 @@ public class MiscUtils {
      * Uses androids android.util.Patterns.WEB_URL to check if an url is valid.
      *
      * @param url Address to check
-     * @return true if the <code>email</code> is a valid email address.
+     * @return true if the <code>url</code> is a valid web address.
      */
     public final static boolean isValidURL(String url) {
         if (url == null) {
