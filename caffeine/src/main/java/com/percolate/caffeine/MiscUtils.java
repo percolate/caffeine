@@ -2,7 +2,9 @@ package com.percolate.caffeine;
 
 import android.content.Context;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.telephony.PhoneNumberUtils;
 import android.util.DisplayMetrics;
+import android.util.Patterns;
 
 /**
  * <h2>A class for toys that do not have a home.</h2>
@@ -89,5 +91,30 @@ public class MiscUtils {
             return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
         }
     }
-	
+    /**
+     * Uses androids android.telephony.PhoneNumberUtils to check if an phone number is valid.
+     *
+     * @param number Phone number to check
+     * @return true if the <code>number</code> is a valid phone number.
+     */
+    public final static boolean isValidPhoneNumber(String number) {
+        if (number == null) {
+            return false;
+        } else {
+            return PhoneNumberUtils.isGlobalPhoneNumber(number);
+        }
+    }
+    /**
+     * Uses androids android.util.Patterns.WEB_URL to check if an url is valid.
+     *
+     * @param url Address to check
+     * @return true if the <code>url</code> is a valid web address.
+     */
+    public final static boolean isValidURL(String url) {
+        if (url == null) {
+            return false;
+        } else {
+            return Patterns.WEB_URL.matcher(url).matches();
+        }
+    }
 }
