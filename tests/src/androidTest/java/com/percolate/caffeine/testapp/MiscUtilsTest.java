@@ -55,8 +55,8 @@ public class MiscUtilsTest extends ActivityInstrumentationTestCase2<MainActivity
     }
 
     public void testIsValidURLTrue(){
-        assertTrue(MiscUtils.isValidPhoneNumber("http://google.com"));
-        assertTrue(MiscUtils.isValidPhoneNumber("https://www.google.com"));
+        assertTrue(MiscUtils.isValidURL("http://google.com"));
+        assertTrue(MiscUtils.isValidURL("https://www.google.com"));
     }
 
     public void testIsValidURLFalse(){
