@@ -6,7 +6,7 @@ import junit.framework.TestCase;
 
 public class CountUtilTest extends TestCase {
 
-    public void testGetFormattedCountInt(){
+    public void testGetFormattedCountInt() {
         assertEquals("0", CountUtil.getFormattedCount(0));
         assertEquals("10", CountUtil.getFormattedCount(10));
         assertEquals("100", CountUtil.getFormattedCount(100));
@@ -29,8 +29,8 @@ public class CountUtilTest extends TestCase {
         assertEquals("120m", CountUtil.getFormattedCount(120000009));
         assertEquals("1.2b", CountUtil.getFormattedCount(1200000009));
     }
-    
-    public void testGetFormattedCountString(){
+
+    public void testGetFormattedCountString() {
         assertEquals("0", CountUtil.getFormattedCount("0"));
         assertEquals("10", CountUtil.getFormattedCount("10"));
         assertEquals("100", CountUtil.getFormattedCount("100"));
@@ -52,9 +52,9 @@ public class CountUtilTest extends TestCase {
         assertEquals("12m", CountUtil.getFormattedCount("12000009"));
         assertEquals("120m", CountUtil.getFormattedCount("120000009"));
         assertEquals("1.2b", CountUtil.getFormattedCount("1200000009"));
-    }    
-    
-    public void testGetFormattedCountLong(){
+    }
+
+    public void testGetFormattedCountLong() {
         assertEquals("0", CountUtil.getFormattedCount(0L));
         assertEquals("10", CountUtil.getFormattedCount(10L));
         assertEquals("100", CountUtil.getFormattedCount(100L));

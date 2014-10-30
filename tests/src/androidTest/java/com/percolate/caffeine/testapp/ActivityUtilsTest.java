@@ -18,7 +18,7 @@ public class ActivityUtilsTest extends ActivityInstrumentationTestCase2<MainActi
         ActivityTwo.activityStarted = false;
     }
 
-    public void testLaunchActivity(){
+    public void testLaunchActivity() {
         assertNotNull(getActivity());
 
         Instrumentation.ActivityMonitor activityMonitor = getInstrumentation().addMonitor(ActivityTwo.class.getName(), null, false);
@@ -30,7 +30,7 @@ public class ActivityUtilsTest extends ActivityInstrumentationTestCase2<MainActi
         activityTwo.finish();
     }
 
-    public void testLaunchActivity2(){
+    public void testLaunchActivity2() {
         assertNotNull(getActivity());
 
         Instrumentation.ActivityMonitor activityMonitor = getInstrumentation().addMonitor(ActivityTwo.class.getName(), null, false);
