@@ -7,7 +7,7 @@ import android.widget.Toast;
 
 import com.percolate.caffeine.ToastUtils;
 
-public class ToastUtilsTest extends ActivityInstrumentationTestCase2<MainActivity>{
+public class ToastUtilsTest extends ActivityInstrumentationTestCase2<MainActivity> {
 
     public ToastUtilsTest() {
         super(MainActivity.class);

@@ -11,7 +11,7 @@ public class StrictModeUtilsTest extends ActivityInstrumentationTestCase2<MainAc
         super(MainActivity.class);
     }
 
-    public void testEnableStrictModeForDevRelease(){
+    public void testEnableStrictModeForDevRelease() {
         StrictModeUtils.enableStrictModeForDevRelease();
         StrictMode.ThreadPolicy threadPolicy = StrictMode.getThreadPolicy();
         //No way to test this, uses masks that we don't have access to.
