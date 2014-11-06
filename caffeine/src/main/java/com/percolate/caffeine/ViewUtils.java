@@ -23,7 +23,7 @@ import android.widget.TextView;
  * <code>ViewUtils.{@link #hideView hideView}(this, R.id.my_text_view);</code><br />
  * <code>ViewUtils.{@link #showView showView}(this, R.id.my_text_view);</code><br />
  * <code>Bitmap bitmap = ViewUtils.{@link #viewToImage viewToImage}(this, R.id.my_layout);</code><br />
- * <code>ViewUtils.{@link #closeKeyboard showKeyboard}(this, R.id.my_text_view);</code><br />
+ * <code>ViewUtils.{@link #showKeyboard showKeyboard}(this, R.id.my_text_view);</code><br />
  * <code>ViewUtils.{@link #closeKeyboard closeKeyboard}(this, R.id.my_text_view);</code><br />
  * <br />
  */
@@ -141,6 +141,22 @@ public class ViewUtils {
             imm.hideSoftInputFromWindow(field.getWindowToken(), 0);
         } catch (Exception ex) {
             Log.e("PercolateAndroidUtils", "Error occurred trying to hide the keyboard.  Exception=" + ex);
+        }
+    }
+
+    /**
+     * Show the pop-up keyboard
+     *
+     * @param context Activity/Context
+     * @param field   field that requests focus
+     */
+    public static void showKeyboard(Context context, View field){
+        try {
+            field.requestFocus();
+            InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.showSoftInput(field, InputMethodManager.SHOW_IMPLICIT);
+        } catch (Exception ex) {
+            Log.e("Caffeine", "Error occurred trying to show the keyboard.  Exception=" + ex);
         }
     }
 
