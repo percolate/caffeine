@@ -37,3 +37,5 @@ task makeJar(type: Copy) {
 }
 
 makeJar.dependsOn(build)
+
+apply from: 'maven_push.gradle'
