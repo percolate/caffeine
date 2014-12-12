@@ -31,10 +31,18 @@ ToastUtils.quickToast(this, "Some toast message");
  - Using gradle
 
 ```groovy
-compile '...coming soon...'
+compile 'com.percolate:caffeine:0.3.3'
 ```
 
- - Using maven (TODO)
+ - Using Maven
+ 
+```xml
+<dependency>
+  <groupId>com.percolate</groupId>
+  <artifactId>caffeine</artifactId>
+  <version>0.3.3</version>
+</dependency>
+```
 
 
 ## License
