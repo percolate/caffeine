@@ -5,7 +5,6 @@ android {
     buildToolsVersion "20.0.0"
 
     defaultConfig {
-        applicationId "com.percolate.caffeine"
         minSdkVersion 14
         targetSdkVersion 20
         versionCode 33
@@ -38,4 +37,3 @@ task makeJar(type: Copy) {
 
 makeJar.dependsOn(build)
 
-apply from: 'maven_push.gradle'
