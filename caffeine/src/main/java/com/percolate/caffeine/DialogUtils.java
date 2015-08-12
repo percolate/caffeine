@@ -18,9 +18,12 @@ import android.widget.TextView;
  */
 public class DialogUtils {
 
+    public static AlertDialog dialog;
     /**
      * Show a model dialog box.  The <code>android.app.AlertDialog</code> object is returned so that
      * you can specify an OnDismissListener (or other listeners) if required.
+     * If an AlertDialog created by this class is already being shown, the AlertDialog will only be
+     * created and returned.
      * <b>Note:</b> show() is already called on the AlertDialog being returned.
      *
      * @param context The current Context or Activity that this method is called from.
@@ -28,15 +31,16 @@ public class DialogUtils {
      * @return AlertDialog that is being displayed.
      */
     public static AlertDialog quickDialog(final Activity context, final String message) {
+        if(dialog != null && dialog.isShowing()) return null;
+
         final SpannableString s = new SpannableString(message); //Make links clickable
         Linkify.addLinks(s, Linkify.ALL);
 
         Builder builder = new AlertDialog.Builder(context);
         builder.setMessage(s);
         builder.setPositiveButton(android.R.string.ok, closeDialogListener());
-        AlertDialog dialog = builder.create();
+        dialog = builder.create();
         dialog.show();
-
         ((TextView) dialog.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance()); //Make links clickable
 
         return dialog;
