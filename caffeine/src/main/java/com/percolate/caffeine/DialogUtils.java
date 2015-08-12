@@ -8,6 +8,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
+import android.util.Log;
 import android.widget.TextView;
 
 /**
@@ -31,17 +32,20 @@ public class DialogUtils {
      * @return AlertDialog that is being displayed.
      */
     public static AlertDialog quickDialog(final Activity context, final String message) {
-        if(dialog != null && dialog.isShowing()) return null;
-
         final SpannableString s = new SpannableString(message); //Make links clickable
         Linkify.addLinks(s, Linkify.ALL);
 
-        Builder builder = new AlertDialog.Builder(context);
-        builder.setMessage(s);
-        builder.setPositiveButton(android.R.string.ok, closeDialogListener());
-        dialog = builder.create();
-        dialog.show();
-        ((TextView) dialog.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance()); //Make links clickable
+        if(dialog != null && dialog.isShowing()){
+            Log.e("DialogUtils", "An alertdialog is already being shown!");
+            dialog.setMessage(s);
+        } else {
+            Builder builder = new AlertDialog.Builder(context);
+            builder.setMessage(s);
+            builder.setPositiveButton(android.R.string.ok, closeDialogListener());
+            dialog = builder.create();
+            dialog.show();
+            ((TextView) dialog.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance()); //Make links clickable
+        }
 
         return dialog;
     }

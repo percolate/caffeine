@@ -14,18 +14,15 @@ public class DialogUtilsTest extends ActivityInstrumentationTestCase2<MainActivi
 
     public void testQuickDialog(){
         AlertDialog alertDialog = DialogUtils.quickDialog(getActivity(), "Test Message");
-        assertNotNull(alertDialog);
         assertTrue(alertDialog.isShowing());
-        AlertDialog secondDialog = DialogUtils.quickDialog(getActivity(), "Second Test");
-        assertNull(secondDialog);
         final TextView textView = (TextView) alertDialog.findViewById(android.R.id.message);
         assertEquals("Test Message", textView.getText().toString());
-        alertDialog.dismiss();
-        assertFalse(alertDialog.isShowing());
-        secondDialog = DialogUtils.quickDialog(getActivity(), "Recreate dialog using DialogUtils");
-        assertNotNull(secondDialog);
+        AlertDialog secondDialog = DialogUtils.quickDialog(getActivity(), "Second Test");
         assertTrue(secondDialog.isShowing());
+        assertEquals("Second Test", textView.getText().toString());
+        assertEquals(alertDialog, secondDialog);
         secondDialog.dismiss();
         assertFalse(secondDialog.isShowing());
+        assertFalse(alertDialog.isShowing());
     }
 }
