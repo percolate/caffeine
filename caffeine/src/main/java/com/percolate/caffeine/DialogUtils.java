@@ -18,7 +18,8 @@ import android.widget.TextView;
  */
 public class DialogUtils {
 
-    public static AlertDialog dialog;
+    private static AlertDialog dialog;
+    private static String activityName;
     /**
      * Show a model dialog box.  The <code>android.app.AlertDialog</code> object is returned so that
      * you can specify an OnDismissListener (or other listeners) if required.
@@ -33,6 +34,13 @@ public class DialogUtils {
     public static AlertDialog quickDialog(final Activity context, final String message) {
         final SpannableString s = new SpannableString(message); //Make links clickable
         Linkify.addLinks(s, Linkify.ALL);
+
+        if(activityName != null && !activityName.equals(context.getLocalClassName())){
+            dialog.dismiss();
+            activityName = context.getLocalClassName();
+        } else {
+            activityName = context.getLocalClassName();
+        }
 
         if(dialog != null && dialog.isShowing()){
             dialog.setMessage(s);
