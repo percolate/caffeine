@@ -8,7 +8,6 @@ import android.content.DialogInterface.OnClickListener;
 import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
-import android.util.Log;
 import android.widget.TextView;
 
 /**
@@ -36,7 +35,6 @@ public class DialogUtils {
         Linkify.addLinks(s, Linkify.ALL);
 
         if(dialog != null && dialog.isShowing()){
-            Log.e("DialogUtils", "An alertdialog is already being shown!");
             dialog.setMessage(s);
         } else {
             Builder builder = new AlertDialog.Builder(context);
