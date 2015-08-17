@@ -60,9 +60,9 @@ public class DialogUtils {
      *          <code>android.text.SpannableString</code> object.
      * @return AlertDialog to be displayed.
      */
-    private static AlertDialog createAlertDialog(Activity context, SpannableString s){
+    private static AlertDialog createAlertDialog(Activity context, SpannableString message){
         Builder builder = new AlertDialog.Builder(context);
-        builder.setMessage(s);
+        builder.setMessage(message);
         builder.setPositiveButton(android.R.string.ok, closeDialogListener());
         AlertDialog dialog = builder.create();
         dialog.show();
