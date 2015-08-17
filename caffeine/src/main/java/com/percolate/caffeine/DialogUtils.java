@@ -28,6 +28,7 @@ public class DialogUtils {
      *
      * @param context The current Context or Activity that this method is called from.
      * @param message Message to display in the dialog.
+     * @param singleDialog Whether the user wants to reference one dialog or create a new one.
      * @return AlertDialog that is being displayed.
      */
     public static AlertDialog quickDialog(final Activity context, final String message,
@@ -56,7 +57,7 @@ public class DialogUtils {
      * and returns it.
      *
      * @param context The current Context or Activity that this method is called from.
-     * @param s Message to display in the dialog that has been modified to a
+     * @param message Message to display in the dialog that has been modified to a
      *          <code>android.text.SpannableString</code> object.
      * @return AlertDialog to be displayed.
      */
