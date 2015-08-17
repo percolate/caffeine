@@ -31,28 +31,34 @@ public class DialogUtils {
      * @param message Message to display in the dialog.
      * @return AlertDialog that is being displayed.
      */
-    public static AlertDialog quickDialog(final Activity context, final String message) {
+    public static AlertDialog quickDialog(final Activity context, final String message, boolean singleDialog) {
         final SpannableString s = new SpannableString(message); //Make links clickable
         Linkify.addLinks(s, Linkify.ALL);
+        if (singleDialog) {
+            if (activityName != null && !activityName.equals(context.getLocalClassName())) {
+                dialog.dismiss();
+            }
 
-        if(activityName != null && !activityName.equals(context.getLocalClassName())){
-            dialog.dismiss();
             activityName = context.getLocalClassName();
-        } else {
-            activityName = context.getLocalClassName();
-        }
 
-        if(dialog != null && dialog.isShowing()){
-            dialog.setMessage(s);
+            if (dialog != null && dialog.isShowing()) {
+                dialog.setMessage(s);
+            } else {
+                dialog = createAlertDialog(context, s);
+            }
         } else {
-            Builder builder = new AlertDialog.Builder(context);
-            builder.setMessage(s);
-            builder.setPositiveButton(android.R.string.ok, closeDialogListener());
-            dialog = builder.create();
-            dialog.show();
-            ((TextView) dialog.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance()); //Make links clickable
+            return createAlertDialog(context, s);
         }
+        return dialog;
+    }
 
+    private static AlertDialog createAlertDialog(Activity context, SpannableString s){
+        Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage(s);
+        builder.setPositiveButton(android.R.string.ok, closeDialogListener());
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        ((TextView) dialog.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance()); //Make links clickable
         return dialog;
     }
 
