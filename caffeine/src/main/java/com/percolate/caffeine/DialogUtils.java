@@ -46,12 +46,17 @@ public class DialogUtils {
             } else {
                 dialog = createAlertDialog(context, s);
             }
-        } else {
-            return createAlertDialog(context, s);
         }
-        return dialog;
+        return (singleDialog) ? dialog : createAlertDialog(context, s);
     }
 
+    /**
+     * Creates an <code>android.app.AlertDialog</code> object with the message in the parameters and returns it.
+     *
+     * @param context The current Context or Activity that this method is called from.
+     * @param s Message to display in the dialog that has been modified to a <code>	android.text.SpannableString</code> object.
+     * @return AlertDialog to be displayed.
+     */
     private static AlertDialog createAlertDialog(Activity context, SpannableString s){
         Builder builder = new AlertDialog.Builder(context);
         builder.setMessage(s);
