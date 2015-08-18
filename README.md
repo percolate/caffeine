@@ -41,7 +41,7 @@ DialogUtils.quickDialog(Activity context, String message, boolean useSingleDialo
  - Using gradle
 
 ```groovy
-compile 'com.percolate:caffeine:0.3.3'
+compile 'com.percolate:caffeine:0.3.4'
 ```
 
  - Using Maven
@@ -50,7 +50,7 @@ compile 'com.percolate:caffeine:0.3.3'
 <dependency>
   <groupId>com.percolate</groupId>
   <artifactId>caffeine</artifactId>
-  <version>0.3.3</version>
+  <version>0.3.4</version>
 </dependency>
 ```
 
