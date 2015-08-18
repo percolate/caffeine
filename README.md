@@ -21,14 +21,6 @@ DialogUtils.quickDialog(this, "Some awesome message");
 ToastUtils.quickToast(this, "Some toast message");
 ```
 
-## Upgrading
-
-Say goodbye to accidental stacked dialog boxes. Choose whether you want to use one alert dialog box throughout your app with the new DialogUtils:
-
-```java
-DialogUtils.quickDialog(Activity context, String message, boolean useSingleDialog);
-```
-
 
 
 [And much more!](http://percolate.github.io/caffeine/javadoc/)
@@ -41,7 +33,7 @@ DialogUtils.quickDialog(Activity context, String message, boolean useSingleDialo
  - Using gradle
 
 ```groovy
-compile 'com.percolate:caffeine:0.3.4'
+compile 'com.percolate:caffeine:0.3.3'
 ```
 
  - Using Maven
@@ -50,7 +42,7 @@ compile 'com.percolate:caffeine:0.3.4'
 <dependency>
   <groupId>com.percolate</groupId>
   <artifactId>caffeine</artifactId>
-  <version>0.3.4</version>
+  <version>0.3.3</version>
 </dependency>
 ```
 
