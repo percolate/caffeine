@@ -21,7 +21,6 @@ DialogUtils.quickDialog(this, "Some awesome message");
 ToastUtils.quickToast(this, "Some toast message");
 ```
 
-<<<<<<< HEAD
 ## Upgrading
 
 Say goodbye to accidental stacked dialog boxes. Choose whether you want to use one alert dialog box throughout your app with the new DialogUtils:
@@ -29,9 +28,6 @@ Say goodbye to accidental stacked dialog boxes. Choose whether you want to use o
 ```java
 DialogUtils.quickDialog(Activity context, String message, boolean useSingleDialog);
 ```
-=======
-
->>>>>>> master
 
 [And much more!](http://percolate.github.io/caffeine/javadoc/)
 
