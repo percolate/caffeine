@@ -3,4 +3,3 @@
 .idea
 .DS_Store
 /build
-caffeine/gradle.properties
