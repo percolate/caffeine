@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 22
+        targetSdkVersion 23
         versionCode 33
         versionName "0.3.3"
     }
@@ -36,5 +36,3 @@ task makeJar(type: Copy) {
 }
 
 makeJar.dependsOn(build)
-
-apply from: 'maven_push.gradle'
