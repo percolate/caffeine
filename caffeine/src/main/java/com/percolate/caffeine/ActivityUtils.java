@@ -93,7 +93,7 @@ public class ActivityUtils {
             window.addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
             window.addFlags(WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
         } catch (Exception ex) {
-            Log.e("PercolateAndroidUtils", "Unable to turn on screen for activity " + context);
+            Log.e("Caffeine", "Unable to turn on screen for activity " + context);
         }
     }
 
