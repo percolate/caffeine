@@ -48,7 +48,7 @@ public class ViewUtils {
             view = (T) (genericView);
         } catch (Exception ex) {
             String message = "Can't cast view (" + id + ") to a " + view.getClass() + ".  Is actually a " + genericView.getClass() + ".";
-            Log.e("PercolateAndroidUtils", message);
+            Log.e("Caffeine", message);
             throw new ClassCastException(message);
         }
 
@@ -74,7 +74,7 @@ public class ViewUtils {
             view = (T) (genericView);
         } catch (Exception ex) {
             String message = "Can't cast view (" + id + ") to a " + view.getClass() + ".  Is actually a " + genericView.getClass() + ".";
-            Log.e("PercolateAndroidUtils", message);
+            Log.e("Caffeine", message);
             throw new ClassCastException(message);
         }
 
@@ -93,7 +93,7 @@ public class ViewUtils {
         if (view != null) {
             text = view.getText().toString();
         } else {
-            Log.e("PercolateAndroidUtils", "Null view given to getText().  \"\" will be returned.");
+            Log.e("Caffeine", "Null view given to getText().  \"\" will be returned.");
         }
         return text;
     }
@@ -113,7 +113,7 @@ public class ViewUtils {
         if (view != null) {
             text = view.getText().toString();
         } else {
-            Log.e("PercolateAndroidUtils", "Null view given to getText().  \"\" will be returned.");
+            Log.e("Caffeine", "Null view given to getText().  \"\" will be returned.");
         }
         return text;
     }
@@ -140,7 +140,7 @@ public class ViewUtils {
             InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(field.getWindowToken(), 0);
         } catch (Exception ex) {
-            Log.e("PercolateAndroidUtils", "Error occurred trying to hide the keyboard.  Exception=" + ex);
+            Log.e("Caffeine", "Error occurred trying to hide the keyboard.  Exception=" + ex);
         }
     }
 
@@ -182,7 +182,7 @@ public class ViewUtils {
                 viewBitmap = Bitmap.createBitmap(viewBitmap, 0, scrollY, viewToBeConverted.getWidth(), height - scrollY);
             }
         } catch (Exception ex) {
-            Log.e("PercolateAndroidUtils", "Could not remove top part of the webview image.  ex=" + ex);
+            Log.e("Caffeine", "Could not remove top part of the webview image.  ex=" + ex);
         }
 
         return viewBitmap;
@@ -200,7 +200,7 @@ public class ViewUtils {
         if (view instanceof TextView) {
             ((TextView) view).setText(text);
         } else {
-            Log.e("PercolateAndroidUtils", "ViewUtils.setText() given a field that is not a TextView");
+            Log.e("Caffeine", "ViewUtils.setText() given a field that is not a TextView");
         }
     }
 
@@ -216,7 +216,7 @@ public class ViewUtils {
         if (view instanceof TextView) {
             ((TextView) view).setText(text);
         } else {
-            Log.e("PercolateAndroidUtils", "ViewUtils.setText() given a field that is not a TextView");
+            Log.e("Caffeine", "ViewUtils.setText() given a field that is not a TextView");
         }
     }
 
@@ -232,7 +232,7 @@ public class ViewUtils {
             if (view != null) {
                 view.setVisibility(View.GONE);
             } else {
-                Log.e("PercolateAndroidUtils", "View does not exist.  Could not hide it.");
+                Log.e("Caffeine", "View does not exist.  Could not hide it.");
             }
         }
     }
@@ -249,7 +249,7 @@ public class ViewUtils {
             if (view != null) {
                 view.setVisibility(View.VISIBLE);
             } else {
-                Log.e("PercolateAndroidUtils", "View does not exist.  Could not hide it.");
+                Log.e("Caffeine", "View does not exist.  Could not hide it.");
             }
         }
     }
