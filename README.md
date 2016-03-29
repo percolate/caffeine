@@ -3,6 +3,7 @@
 
 A collection of utility classes that help make Android development faster (and safer!)
 
+
 ## Examples
 
 No more unsafe type casting scattered throughout your code:
@@ -21,30 +22,17 @@ DialogUtils.quickDialog(this, "Some awesome message");
 ToastUtils.quickToast(this, "Some toast message");
 ```
 
-
-
 [And much more!](http://percolate.github.io/caffeine/javadoc/)
 
 
 ## Adding to your application
 
- - As a [.jar](https://github.com/percolate/caffeine/tree/master/distribution) file
+See https://jitpack.io/com/github/percolate/caffeine/
 
- - Using gradle
 
-```groovy
-compile 'com.percolate:caffeine:0.3.3'
-```
+## Running Tests
 
- - Using Maven
- 
-```xml
-<dependency>
-  <groupId>com.percolate</groupId>
-  <artifactId>caffeine</artifactId>
-  <version>0.3.3</version>
-</dependency>
-```
+`./gradlew clean test:connectedAndroidTest`
 
 
 ## License

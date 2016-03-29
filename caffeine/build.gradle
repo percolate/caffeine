@@ -1,38 +1,69 @@
 apply plugin: 'com.android.library'
+apply plugin: 'jacoco'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group 'com.percolate.caffeine'
+version '1.0-SNAPSHOT'
 
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
 
+    buildTypes {
+        debug {
+            testCoverageEnabled false
+        }
+    }
+
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 33
-        versionName "0.3.3"
+        versionCode 40
+        versionName "0.4.0"
     }
 
-    sourceSets {
-        main  {
-            java {
-                srcDir 'src/main/java'
-            }
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/DEPENDENCIES'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+jacoco {
+    version = '0.7.5.201505241946'
+}
+
+task coverage(type:JacocoReport, dependsOn: "testDebugUnitTest") {
+    group = "Reporting"
+    description = 'Create code coverage report for android module'
+
+    classDirectories = fileTree(
+            dir: "$buildDir/intermediates/classes/debug",
+            excludes: ['**/R.class',
+                       '**/R$*.class',
+                       '**/BuildConfig.*',
+                       '**/Manifest*.*']
+    )
+
+    sourceDirectories = files("src/main/java")
+    executionData = files("build/jacoco/testDebugUnitTest.exec")
+
+    reports {
+        //noinspection GroovyAssignabilityCheck
+        xml {
+            enabled = true
+            destination = "build/jacocoAndroidTests.xml"
         }
+        html.enabled = true
     }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
-
-task jar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-}
-
-task makeJar(type: Copy) {
-    from('build/intermediates/bundles/release/')
-    into('../distribution')
-    include('classes.jar')
-    rename ('classes.jar', 'caffeine-' + android.defaultConfig.versionName + ".jar")
-}
-
-makeJar.dependsOn(build)
