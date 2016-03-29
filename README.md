@@ -27,7 +27,11 @@ ToastUtils.quickToast(this, "Some toast message");
 
 ## Adding to your application
 
-See https://jitpack.io/com/github/percolate/caffeine/
+Simply add Caffeine as a gradle dependency.  Distribution is done through jitpack.io.
+
+See https://jitpack.io/#percolate/caffeine for instructions
+
+[![](https://jitpack.io/v/percolate/caffeine.svg)](https://jitpack.io/#percolate/caffeine)
 
 
 ## Running Tests
