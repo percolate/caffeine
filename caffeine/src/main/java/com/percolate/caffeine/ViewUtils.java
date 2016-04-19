@@ -14,9 +14,9 @@ import android.widget.TextView;
  * <h2>Utility methods that make working with views easier, less error prone, and more concise.</h2>
  * <p/>
  * <h3>Common uses:</h3>
- * <code>LinearLayout linearLayout = ViewUtils.{@link #findViewById findViewById}(this, R.id.my_linear_layout);</code> //<b>no more casting!</b><br />
  * <code>TextView textView = ViewUtils.{@link #findViewById findViewById}(this, R.id.my_text_view);</code> //<b>no more casting!</b><br />
  * <code>TextView textView = ViewUtils.{@link #findViewById findViewById}(parentView, R.id.my_text_view);</code> //<b>no more casting!</b><br />
+ * <code>LinearLayout linearLayout = ViewUtils.{@link #findViewById findViewById}(this, R.id.my_linear_layout);</code> //<b>no more casting!</b><br />
  * <code>String text = ViewUtils.{@link #getText getText}(this, R.id.my_text_view);</code><br />
  * <code>ViewUtils.{@link #setText setText}(this, R.id.my_text_vew, "new text");</code><br />
  * <code>ViewUtils.{@link #setText setText}(textView, "new text");</code><br />
@@ -247,12 +247,14 @@ public class ViewUtils {
      * @param id         R.id.xxxx value for the view to hide "expected textView to throw a ClassCastException" + textView.
      */
     public static void hideView(View parentView, int id) {
+        if (parentView != null) {
           View view = parentView.findViewById(id);
           if (view != null) {
               view.setVisibility(View.GONE);
           } else {
               Log.e("Caffeine", "View does not exist.  Could not hide it.");
           }
+        }
     }
 
     /**
@@ -279,11 +281,13 @@ public class ViewUtils {
      * @param id         R.id.xxxx value for the view to show.
      */
     public static void showView(View parentView, int id) {
-        View view = parentView.findViewById(id);
-        if (view != null) {
-            view.setVisibility(View.VISIBLE);
-        } else {
-            Log.e("Caffeine", "View does not exist.  Could not show it.");
+        if (parentView != null) {
+          View view = parentView.findViewById(id);
+          if (view != null) {
+              view.setVisibility(View.VISIBLE);
+          } else {
+              Log.e("Caffeine", "View does not exist.  Could not show it.");
+          }
         }
     }
 }
