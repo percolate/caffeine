@@ -16,12 +16,15 @@ import android.widget.TextView;
  * <h3>Common uses:</h3>
  * <code>TextView textView = ViewUtils.{@link #findViewById findViewById}(this, R.id.my_text_view);</code> //<b>no more casting!</b><br />
  * <code>TextView textView = ViewUtils.{@link #findViewById findViewById}(parentView, R.id.my_text_view);</code> //<b>no more casting!</b><br />
+ * <code>LinearLayout linearLayout = ViewUtils.{@link #findViewById findViewById}(this, R.id.my_linear_layout);</code> //<b>no more casting!</b><br />
  * <code>String text = ViewUtils.{@link #getText getText}(this, R.id.my_text_view);</code><br />
  * <code>ViewUtils.{@link #setText setText}(this, R.id.my_text_vew, "new text");</code><br />
  * <code>ViewUtils.{@link #setText setText}(textView, "new text");</code><br />
  * <code>ViewUtils.{@link #appendText appendText}(textView, "appended");</code><br />
  * <code>ViewUtils.{@link #hideView hideView}(this, R.id.my_text_view);</code><br />
+ * <code>ViewUtils.{@link #hideView hideView}(linearLayout, R.id.my_text_view);</code><br />
  * <code>ViewUtils.{@link #showView showView}(this, R.id.my_text_view);</code><br />
+ * <code>ViewUtils.{@link #showView showView}(linearLayout, R.id.my_text_view);</code><br />
  * <code>Bitmap bitmap = ViewUtils.{@link #viewToImage viewToImage}(this, R.id.my_layout);</code><br />
  * <code>ViewUtils.{@link #showKeyboard showKeyboard}(this, R.id.my_text_view);</code><br />
  * <code>ViewUtils.{@link #closeKeyboard closeKeyboard}(this, R.id.my_text_view);</code><br />
@@ -35,8 +38,8 @@ public class ViewUtils {
      * - Casts view to appropriate type based on expected return value
      * - Handles & logs invalid casts
      *
-     * @param context The current Context or Activity that this method is called from
-     * @param id      R.id value for view
+     * @param context The current Context or Activity that this method is called from.
+     * @param id      R.id value for view.
      * @return View object, cast to appropriate type based on expected return value.
      * @throws ClassCastException if cast to the expected type breaks.
      */
@@ -61,8 +64,8 @@ public class ViewUtils {
      * - Casts view to appropriate type based on expected return value
      * - Handles & logs invalid casts
      *
-     * @param parentView Parent View containing the view we are trying to get
-     * @param id         R.id value for view
+     * @param parentView Parent View containing the view we are trying to get.
+     * @param id         R.id value for view.
      * @return View object, cast to appropriate type based on expected return value.
      * @throws ClassCastException if cast to the expected type breaks.
      */
@@ -85,8 +88,8 @@ public class ViewUtils {
      * Get text as String from EditView.
      * <b>Note:</b> returns "" for null EditText, not a NullPointerException
      *
-     * @param view EditView to get text from
-     * @return the text
+     * @param view EditView to get text from.
+     * @return the text.
      */
     public static String getText(TextView view) {
         String text = "";
@@ -102,8 +105,8 @@ public class ViewUtils {
      * Get text as String from EditView.
      * <b>Note:</b> returns "" for null EditText, not a NullPointerException
      *
-     * @param context The current Context or Activity that this method is called from
-     * @param id      Id for the TextView/EditView to get text from
+     * @param context The current Context or Activity that this method is called from.
+     * @param id      Id for the TextView/EditView to get text from.
      * @return the text
      */
     public static String getText(Activity context, int id) {
@@ -121,8 +124,8 @@ public class ViewUtils {
     /**
      * Append given text String to the provided view (one of TextView or EditText).
      *
-     * @param view     View to update
-     * @param toAppend String text
+     * @param view     View to update.
+     * @param toAppend String text.
      */
     public static void appendText(TextView view, String toAppend) {
         String currentText = getText(view);
@@ -132,8 +135,8 @@ public class ViewUtils {
     /**
      * Go away keyboard, nobody likes you.
      *
-     * @param context The current Context or Activity that this method is called from
-     * @param field   field that holds the keyboard focus
+     * @param context The current Context or Activity that this method is called from.
+     * @param field   field that holds the keyboard focus.
      */
     public static void closeKeyboard(Context context, View field) {
         try {
@@ -147,8 +150,8 @@ public class ViewUtils {
     /**
      * Show the pop-up keyboard
      *
-     * @param context Activity/Context
-     * @param field   field that requests focus
+     * @param context Activity/Context.
+     * @param field   field that requests focus.
      */
     public static void showKeyboard(Context context, View field){
         try {
@@ -163,8 +166,8 @@ public class ViewUtils {
     /**
      * Convert view to an image.  Can be used to make animations smoother.
      *
-     * @param context           The current Context or Activity that this method is called from
-     * @param viewToBeConverted View to convert to a Bitmap
+     * @param context           The current Context or Activity that this method is called from.
+     * @param viewToBeConverted View to convert to a Bitmap.
      * @return Bitmap object that can be put in an ImageView.  Will look like the converted viewToBeConverted.
      */
     public static Bitmap viewToImage(Context context, WebView viewToBeConverted) {
@@ -189,9 +192,9 @@ public class ViewUtils {
     }
 
     /**
-     * Method used to set text for a TextView
+     * Method used to set text for a TextView.
      *
-     * @param context The current Context or Activity that this method is called from
+     * @param context The current Context or Activity that this method is called from.
      * @param field   R.id.xxxx value for the text field.
      * @param text    Text to place in the text field.
      */
@@ -205,9 +208,9 @@ public class ViewUtils {
     }
 
     /**
-     * Method used to set text for a TextView
+     * Method used to set text for a TextView.
      *
-     * @param parentView The View used to call findViewId() on
+     * @param parentView The View used to call findViewId() on.
      * @param field      R.id.xxxx value for the text field.
      * @param text       Text to place in the text field.
      */
@@ -223,8 +226,8 @@ public class ViewUtils {
     /**
      * Sets visibility of the given view to <code>View.GONE</code>.
      *
-     * @param context The current Context or Activity that this method is called from
-     * @param id      R.id.xxxx value for the view to hide"expected textView to throw a ClassCastException" + textView
+     * @param context The current Context or Activity that this method is called from.
+     * @param id      R.id.xxxx value for the view to hide"expected textView to throw a ClassCastException" + textView.
      */
     public static void hideView(Activity context, int id) {
         if (context != null) {
@@ -238,10 +241,27 @@ public class ViewUtils {
     }
 
     /**
+     * Sets visibility of the given view to <code>View.GONE</code>.
+     *
+     * @param parentView The View used to call findViewId() on.
+     * @param id         R.id.xxxx value for the view to hide "expected textView to throw a ClassCastException" + textView.
+     */
+    public static void hideView(View parentView, int id) {
+        if (parentView != null) {
+          View view = parentView.findViewById(id);
+          if (view != null) {
+              view.setVisibility(View.GONE);
+          } else {
+              Log.e("Caffeine", "View does not exist.  Could not hide it.");
+          }
+        }
+    }
+
+    /**
      * Sets visibility of the given view to <code>View.VISIBLE</code>.
      *
-     * @param context The current Context or Activity that this method is called from
-     * @param id      R.id.xxxx value for the view to show
+     * @param context The current Context or Activity that this method is called from.
+     * @param id      R.id.xxxx value for the view to show.
      */
     public static void showView(Activity context, int id) {
         if (context != null) {
@@ -249,8 +269,25 @@ public class ViewUtils {
             if (view != null) {
                 view.setVisibility(View.VISIBLE);
             } else {
-                Log.e("Caffeine", "View does not exist.  Could not hide it.");
+                Log.e("Caffeine", "View does not exist.  Could not show it.");
             }
+        }
+    }
+
+    /**
+     * Sets visibility of the given view to <code>View.VISIBLE</code>.
+     *
+     * @param parentView The View used to call findViewId() on.
+     * @param id         R.id.xxxx value for the view to show.
+     */
+    public static void showView(View parentView, int id) {
+        if (parentView != null) {
+          View view = parentView.findViewById(id);
+          if (view != null) {
+              view.setVisibility(View.VISIBLE);
+          } else {
+              Log.e("Caffeine", "View does not exist.  Could not show it.");
+          }
         }
     }
 }
