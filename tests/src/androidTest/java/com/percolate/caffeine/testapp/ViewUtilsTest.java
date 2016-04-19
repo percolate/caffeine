@@ -125,6 +125,21 @@ public class ViewUtilsTest extends ActivityInstrumentationTestCase2<ViewUtilsAct
         assertEquals(View.GONE, textView.getVisibility());
     }
 
+    public void testHideViewChildView(){
+        final LinearLayout layout = ViewUtils.findViewById(getActivity(), R.id.layout_1);
+
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                ViewUtils.hideView(layout, R.id.text_view_2);
+            }
+        });
+        getInstrumentation().waitForIdleSync();
+
+        final TextView textView = ViewUtils.findViewById(layout, R.id.text_view_2);
+        assertEquals(View.GONE, textView.getVisibility());
+    }
+
     public void testShowView(){
         final View textView = ViewUtils.findViewById(getActivity(), R.id.hidden_view_1);
         assertEquals(View.GONE, textView.getVisibility());
@@ -137,6 +152,21 @@ public class ViewUtilsTest extends ActivityInstrumentationTestCase2<ViewUtilsAct
         });
         getInstrumentation().waitForIdleSync();
 
+        assertEquals(View.VISIBLE, textView.getVisibility());
+    }
+
+    public void testShowViewChildView(){
+        final LinearLayout layout = ViewUtils.findViewById(getActivity(), R.id.layout_1);
+
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                ViewUtils.showView(layout, R.id.text_view_2);
+            }
+        });
+        getInstrumentation().waitForIdleSync();
+
+        final TextView textView = ViewUtils.findViewById(layout, R.id.text_view_2);
         assertEquals(View.VISIBLE, textView.getVisibility());
     }
 
