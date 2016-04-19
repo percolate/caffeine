@@ -267,7 +267,7 @@ public class ViewUtils {
             if (view != null) {
                 view.setVisibility(View.VISIBLE);
             } else {
-                Log.e("Caffeine", "View does not exist.  Could not hide it.");
+                Log.e("Caffeine", "View does not exist.  Could not show it.");
             }
         }
     }
@@ -283,7 +283,7 @@ public class ViewUtils {
         if (view != null) {
             view.setVisibility(View.VISIBLE);
         } else {
-            Log.e("Caffeine", "View does not exist.  Could not hide it.");
+            Log.e("Caffeine", "View does not exist.  Could not show it.");
         }
     }
 }
