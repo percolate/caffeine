@@ -1,6 +1,10 @@
 # Caffeine 
 #### _Speed up your Android development!_
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Caffeine-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/1055)
+[![Codacy](https://api.codacy.com/project/badge/Grade/7051075a25b548699c642b39f666580f)](https://www.codacy.com/app/brent/caffeine?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=percolate/caffeine&amp;utm_campaign=Badge_Grade)
+[![JitPack](https://jitpack.io/v/percolate/caffeine.svg)](https://jitpack.io/#percolate/caffeine)
+
 A collection of utility classes that help make Android development faster (and safer!)
 
 
@@ -41,5 +45,5 @@ See https://jitpack.io/#percolate/caffeine for instructions
 
 ## License
 
-Open source.  Distributed under the BSD 3 license.  See [license.txt](https://github.com/percolate/caffeine/blob/master/license.txt) for details.
+Open source.  Distributed under the BSD 3 license.  See [LICENSE.txt](https://github.com/percolate/caffeine/blob/master/LICENSE.txt) for details.
 
