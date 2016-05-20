@@ -2,8 +2,7 @@
 #### _Speed up your Android development!_
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Caffeine-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/1055)
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Caffeine-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/1055)
-
+[![](https://jitpack.io/v/percolate/caffeine.svg)](https://jitpack.io/#percolate/caffeine)
 
 A collection of utility classes that help make Android development faster (and safer!)
 
