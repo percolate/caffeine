@@ -25,4 +25,17 @@ public class ClipboardUtils {
         }
         return null;
     }
+
+    /**
+     * Set the clipboard text.
+     *
+     * @param text Text to put in the clipboard.
+     */
+    public static void setClipboardText(final Context context, final String text) {
+        if(text != null) {
+            final ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+            final ClipData clipData = ClipData.newPlainText(text, text);
+            clipboard.setPrimaryClip(clipData);
+        }
+    }
 }
