@@ -84,4 +84,26 @@ public class IntentUtils {
             return false;
         }
     }
+
+    /**
+     * Starts a {@code ACTION_SENDTO} system {@code Intent} used to create a message (email, sms, text, etc).
+     * @param subject   Optional subject line.
+     * @param body      Optional message body.
+     * @param toAddress Optional "to" address.
+     */
+    public static void sendMessage(final Context context, final String subject, final String body, final String toAddress) {
+        final Intent intent;
+        if (toAddress != null && !"".equals(toAddress)) {
+            intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", toAddress, null));
+        } else {
+            intent = new Intent(Intent.ACTION_SENDTO);
+        }
+        if (subject != null && !"".equals(subject)) {
+            intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        }
+        if (body != null && !"".equals(body)) {
+            intent.putExtra(Intent.EXTRA_TEXT, body);
+        }
+        context.startActivity(Intent.createChooser(intent, "Send message..."));
+    }
 }
