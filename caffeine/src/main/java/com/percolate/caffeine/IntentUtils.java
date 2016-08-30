@@ -96,8 +96,9 @@ public class IntentUtils {
         if (toAddress != null && !"".equals(toAddress)) {
             intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", toAddress, null));
         } else {
-            intent = new Intent(Intent.ACTION_SENDTO);
+            intent = new Intent(Intent.ACTION_SEND);
         }
+        intent.setType("text/plain");
         if (subject != null && !"".equals(subject)) {
             intent.putExtra(Intent.EXTRA_SUBJECT, subject);
         }
