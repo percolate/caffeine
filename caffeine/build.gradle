@@ -6,8 +6,8 @@ group 'com.percolate.caffeine'
 version '1.0-SNAPSHOT'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 24
+    buildToolsVersion "23.0.3"
 
     buildTypes {
         debug {
@@ -17,7 +17,7 @@ android {
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 23
+        targetSdkVersion 24
         versionCode 41
         versionName "0.4.1"
     }
@@ -36,7 +36,7 @@ repositories {
 }
 
 jacoco {
-    version = '0.7.5.201505241946'
+    version = '0.7.7.201606060606'
 }
 
 task coverage(type:JacocoReport, dependsOn: "testDebugUnitTest") {
