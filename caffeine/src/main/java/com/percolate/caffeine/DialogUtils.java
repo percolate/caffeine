@@ -31,11 +31,13 @@ public class DialogUtils {
         final SpannableString s = new SpannableString(message); //Make links clickable
         Linkify.addLinks(s, Linkify.ALL);
 
-        Builder builder = new AlertDialog.Builder(context);
+        final Builder builder = new AlertDialog.Builder(context);
         builder.setMessage(s);
         builder.setPositiveButton(android.R.string.ok, closeDialogListener());
         AlertDialog dialog = builder.create();
-        dialog.show();
+        if(!context.isFinishing()) {
+            dialog.show();
+        }
 
         ((TextView) dialog.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance()); //Make links clickable
 
