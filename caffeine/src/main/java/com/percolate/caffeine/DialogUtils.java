@@ -37,9 +37,11 @@ public class DialogUtils {
         AlertDialog dialog = builder.create();
         if(!context.isFinishing()) {
             dialog.show();
+            final TextView textView = (TextView) dialog.findViewById(android.R.id.message);
+            if (textView != null) {
+                textView.setMovementMethod(LinkMovementMethod.getInstance()); //Make links clickable
+            }
         }
-
-        ((TextView) dialog.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance()); //Make links clickable
 
         return dialog;
     }
