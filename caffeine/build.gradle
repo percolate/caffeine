@@ -6,8 +6,8 @@ group 'com.percolate.caffeine'
 version '1.0-SNAPSHOT'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion = "24.0.3"
+    compileSdkVersion 25
+    buildToolsVersion = '25.0.2'
 
     buildTypes {
         debug {
@@ -17,9 +17,9 @@ android {
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 24
-        versionCode 41
-        versionName "0.4.2"
+        targetSdkVersion 25
+        versionCode 43
+        versionName "0.4.3"
     }
 
     packagingOptions {
