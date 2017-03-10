@@ -4,11 +4,15 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+
+import java.util.List;
 
 /**
  * Utility methods for starting various kinds of system {@link android.content.Intent}'s.
@@ -64,7 +68,22 @@ public class IntentUtils {
         final Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, outputDestination);
         if (intent.resolveActivity(context.getPackageManager()) != null) {
+            grantUriPermissionsForIntent(context, outputDestination, intent);
             context.startActivityForResult(intent, requestCode);
+        }
+    }
+
+    /**
+     * Grant permissions to read/write the given URI.
+     * Take from: http://stackoverflow.com/a/33754937/1234900
+     */
+    private static void grantUriPermissionsForIntent(final Activity context, final Uri outputDestination, final Intent intent) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            final List<ResolveInfo> resInfoList = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+            for (ResolveInfo resolveInfo : resInfoList) {
+                final String packageName = resolveInfo.activityInfo.packageName;
+                context.grantUriPermission(packageName, outputDestination, Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            }
         }
     }
 
